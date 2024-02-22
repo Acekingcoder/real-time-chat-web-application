@@ -1,5 +1,6 @@
 const { VITE_APP_API_URL } = import.meta.env;
 export const baseUrl = VITE_APP_API_URL;
+import axios from "axios";
 
 // export const postRequest = async (url, body) => {
 //   const response = await fetch(url, {
@@ -25,8 +26,6 @@ export const baseUrl = VITE_APP_API_URL;
 
 //   return data;
 // };
-
-const axios = require("axios");
 
 export const postRequest = async (url, body) => {
   try {
