@@ -1,4 +1,5 @@
-export const baseUrl = "https://real-time-web-server-backend.onrender.com/";
+const { VITE_APP_API_URL } = import.meta.env;
+export const baseUrl = VITE_APP_API_URL;
 
 export const postRequest = async (url, body) => {
   const response = await fetch(url, {
