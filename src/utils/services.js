@@ -1,5 +1,4 @@
-export const baseUrl =
-  "https://real-time-chat-web-application-r60zsajm8.vercel.app/";
+export const baseUrl = "https://real-time-web-server-backend.onrender.com/";
 
 export const postRequest = async (url, body) => {
   const response = await fetch(url, {
