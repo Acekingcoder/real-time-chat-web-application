@@ -84,7 +84,7 @@ export const ChatContextProvider = ({ children, user }) => {
 
   useEffect(() => {
     const getUsers = async () => {
-      const response = await getRequest(`${baseUrl}/users`);
+      const response = await getRequest(`${baseUrl}/api/users`);
 
       if (response.error) {
         return console.log("Error fetching users", response);
