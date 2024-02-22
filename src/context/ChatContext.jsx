@@ -114,7 +114,7 @@ export const ChatContextProvider = ({ children, user }) => {
         setIsUserChatsLoading(true);
 
         setUserChatsError(null);
-        const response = await getRequest(`${baseUrl}/chats/${user?._id}`);
+        const response = await getRequest(`${baseUrl}/api/chats/${user?._id}`);
 
         setIsUserChatsLoading(false);
 
@@ -135,7 +135,7 @@ export const ChatContextProvider = ({ children, user }) => {
         setMessagesError(null);
 
         const response = await getRequest(
-          `${baseUrl}/messages/${currentChat._id}` // Corrected usage of currentChat
+          `${baseUrl}/api/messages/${currentChat._id}` // Corrected usage of currentChat
         );
 
         setIsMessagesLoading(false);
@@ -154,7 +154,7 @@ export const ChatContextProvider = ({ children, user }) => {
       if (!textMessage) return console.log("You must type something");
 
       const response = await postRequest(
-        `${baseUrl}/messages`,
+        `${baseUrl}/api/messages`,
         JSON.stringify({
           chatId: currentChatId,
           senderId: sender._id,
@@ -177,7 +177,7 @@ export const ChatContextProvider = ({ children, user }) => {
 
   const createChat = useCallback(async (firstId, secondId) => {
     const response = await postRequest(
-      `${baseUrl}/chats/`,
+      `${baseUrl}/api/chats/`,
       JSON.stringify({
         firstId,
         secondId,
