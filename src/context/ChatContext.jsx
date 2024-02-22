@@ -23,7 +23,10 @@ export const ChatContextProvider = ({ children, user }) => {
   console.log("notifications", notifications);
 
   useEffect(() => {
-    const newSocket = io("http://localhost:3000");
+    // const newSocket = io("http://localhost:3000");
+    const newSocket = io(
+      "https://real-time-chat-web-application-r60zsajm8.vercel.app"
+    );
     setSocket(newSocket);
 
     return () => {

@@ -1,4 +1,5 @@
-export const baseUrl = "http://localhost:5000/api";
+export const baseUrl =
+  "https://real-time-chat-web-application-r60zsajm8.vercel.app/";
 
 export const postRequest = async (url, body) => {
   const response = await fetch(url, {
