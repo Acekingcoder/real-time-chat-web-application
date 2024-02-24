@@ -19,14 +19,13 @@ export const ChatContextProvider = ({ children, user }) => {
   const [onlineUsers, setOnlineUsers] = useState([]);
   const [notifications, setNotifications] = useState([]);
   const [allUsers, setAllUsers] = useState([]);
+  const { VITE_APP_SOCKET } = import.meta.env;
 
   console.log("notifications", notifications);
 
   useEffect(() => {
     // const newSocket = io("http://localhost:3000");
-    const newSocket = io(
-      "https://real-time-chat-web-application-r60zsajm8.vercel.app"
-    );
+    const newSocket = io(VITE_APP_SOCKET);
     setSocket(newSocket);
 
     return () => {
@@ -105,6 +104,7 @@ export const ChatContextProvider = ({ children, user }) => {
       setPotentialChats(pChats);
       setAllUsers(response);
     };
+
     getUsers();
   }, [user, userChats]); // Added userChats as a dependency
 
